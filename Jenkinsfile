@@ -3,7 +3,7 @@ pipeline {
     
     environment {
         // Define environment variables
-        MAVEN_HOME = '/opt/maven'
+        MAVEN_HOME = '/usr/share/mvn'
         JAVA_HOME = '/usr/lib/jvm/java-8-openjdk-amd64'
     }
 
