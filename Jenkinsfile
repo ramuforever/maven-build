@@ -7,11 +7,12 @@ pipeline {
         JAVA_HOME = '/usr/lib/jvm/java-8-openjdk-amd64'
     }
 
-    stage('Checkout') {
-    steps {
-        // Replace 'your-git-repo-url' with the actual repo URL
-        // If needed, add credentials or branch specification
-        sh 'git clone https://github.com/ramuforever/maven-build.git'
+    stages { // This line was missing
+        stage('Checkout') {
+            steps {
+                // Replace 'your-git-repo-url' with the actual repo URL
+                // If needed, add credentials or branch specification
+                sh 'git clone https://github.com/ramuforever/maven-build.git'
             }
         }
 
@@ -44,7 +45,7 @@ pipeline {
                 // sh 'scp target/myapp.war user@test-server:/opt/tomcat/webapps/'
             }
         }
-    }
+    } // Close the stages block
 
     post {
         // Actions to take after the pipeline stages are completed
